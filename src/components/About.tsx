@@ -6,11 +6,11 @@ import { Skill } from '../types';
 const skills: Skill[] = [
   { name: 'Next.js/React', level: 90, category: 'Frontend' },
   { name: 'TypeScript', level: 88, category: 'Frontend' },
-  { name: 'React Native', level: 85, category: 'Mobile' },
+  { name: 'React Native', level: 85, category: 'Other' }, // Changed from 'Mobile'
   { name: 'Node.js', level: 85, category: 'Backend' },
   { name: 'Python/Django', level: 80, category: 'Backend' },
-  { name: 'AWS/Cloud', level: 75, category: 'DevOps' },
-  { name: 'MongoDB', level: 80, category: 'Database' },
+  { name: 'AWS/Cloud', level: 75, category: 'Tools' }, // Changed from 'DevOps'
+  { name: 'MongoDB', level: 80, category: 'Tools' }, // Changed from 'Database'
   { name: 'Git/GitHub', level: 90, category: 'Tools' },
 ];
 
