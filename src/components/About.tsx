@@ -6,15 +6,18 @@ import { Skill } from '../types';
 const skills: Skill[] = [
   { name: 'Next.js/React', level: 90, category: 'Frontend' },
   { name: 'TypeScript', level: 88, category: 'Frontend' },
-  { name: 'React Native', level: 85, category: 'Other' }, // Changed from 'Mobile'
+  { name: 'React Native', level: 85, category: 'Mobile' },
+  { name: 'Android Development', level: 80, category: 'Mobile' },
+  { name: 'Kotlin', level: 78, category: 'Mobile' },
+  { name: 'Java', level: 75, category: 'Backend' },
   { name: 'Node.js', level: 85, category: 'Backend' },
   { name: 'Python/Django', level: 80, category: 'Backend' },
-  { name: 'AWS/Cloud', level: 75, category: 'Tools' }, // Changed from 'DevOps'
-  { name: 'MongoDB', level: 80, category: 'Tools' }, // Changed from 'Database'
+  { name: 'AWS/Cloud', level: 75, category: 'Tools' },
+  { name: 'MongoDB', level: 80, category: 'Tools' },
+  { name: 'Room Database', level: 75, category: 'Tools' },
   { name: 'Git/GitHub', level: 90, category: 'Tools' },
 ];
 
-// Your three profile images
 const profileImages = [
   { 
     id: 1, 
@@ -62,7 +65,6 @@ export default function About() {
                 onError={handleImageError}
               />
               
-              {/* Navigation Arrows */}
               <button className="carousel-arrow carousel-prev" onClick={prevImage}>
                 ‹
               </button>
@@ -70,7 +72,6 @@ export default function About() {
                 ›
               </button>
               
-              {/* Image Indicators */}
               <div className="carousel-indicators">
                 {profileImages.map((_, index) => (
                   <button
@@ -90,13 +91,15 @@ export default function About() {
               that solve real-world problems.
             </p>
             <p>
-              With extensive experience in modern technologies like React, Next.js, Node.js, and React Native, 
-              I specialize in building robust solutions from concept to deployment. I'm always eager to 
-              tackle challenging projects and learn new technologies.
+              With extensive experience in modern technologies like React, Next.js, Node.js, React Native, 
+              and now native Android development with Kotlin and Java, I specialize in building robust solutions 
+              from concept to deployment. My recent work includes building complete Student Management Systems 
+              with Room database integration and modern Android architecture patterns.
             </p>
             <p>
               When I'm not coding, you can find me contributing to open-source projects, mentoring 
-              junior developers, or exploring the latest trends in software architecture and cloud computing.
+              junior developers, or exploring the latest trends in software architecture, mobile development, 
+              and cloud computing.
             </p>
             
             <div style={{ marginTop: '2rem' }}>
