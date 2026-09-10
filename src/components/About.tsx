@@ -38,7 +38,6 @@ export default function About() {
                   position: i === 0 ? 'relative' : 'absolute',
                   inset: i === 0 ? undefined : 0,
                   opacity: i === idx ? 1 : 0,
-                  transition: 'opacity 0.6s ease',
                 }}
               />
             ))}
@@ -85,9 +84,17 @@ export default function About() {
             <div className="skills-grid">
               {skills.map((s) => (
                 <div key={s.name} className="skill-item">
-                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.3rem' }}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      marginBottom: '0.3rem',
+                    }}
+                  >
                     <span style={{ fontWeight: 500 }}>{s.name}</span>
-                    <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>{s.level}%</span>
+                    <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
+                      {s.level}%
+                    </span>
                   </div>
                   <div className="skill-bar">
                     <div className="skill-bar-fill" style={{ width: `${s.level}%` }} />
