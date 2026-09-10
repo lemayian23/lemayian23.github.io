@@ -11,7 +11,7 @@ export default function Footer() {
             GitHub
           </a>
           {' | '}
-          <a href="mailto:lemayianledavit2018@gmail.com" style={{ color: 'white' }}>
+          <a href="mailto:softwareengineer@lemayian.comS" style={{ color: 'white' }}>
             Get in touch
           </a>
         </p>
