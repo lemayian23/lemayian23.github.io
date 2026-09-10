@@ -59,92 +59,63 @@ export default function Projects() {
   const rest = projects.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="section">
+    <section id="projects" className="section" style={{ backgroundColor: 'var(--card-bg)' }}>
       <div className="container">
-        <h2 style={{ fontSize: '2.5rem', marginBottom: '2.5rem', textAlign: 'center', color: 'var(--secondary-color)' }}>
-          My Projects
-        </h2>
+        <h2 className="section-title">My Projects</h2>
 
+        {/* Featured Project */}
         {featured.map((project) => (
-          <div
-            key={project.id}
-            style={{
-              backgroundColor: 'var(--card-bg)',
-              borderRadius: '12px',
-              padding: '2rem',
-              marginBottom: '2rem',
-              border: '2px solid var(--primary-color)',
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
-              <span aria-hidden="true">⭐</span>
-              <h3 style={{ margin: 0 }}>{project.title}</h3>
-            </div>
-            <p style={{ marginBottom: '1rem', color: 'var(--text-color)' }}>{project.description}</p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
+          <div key={project.id} className="project-card featured" style={{ marginBottom: '2.5rem' }}>
+            <h3>
+              <span className="star">⭐</span>
+              {project.title}
+            </h3>
+            <p>{project.description}</p>
+
+            <div className="tech-tags">
               {project.technologies.map((tech) => (
-                <span
-                  key={tech}
-                  style={{
-                    fontSize: '0.8rem',
-                    padding: '0.2rem 0.6rem',
-                    borderRadius: '999px',
-                    backgroundColor: 'var(--primary-color)',
-                    color: '#fff',
-                    opacity: 0.85,
-                  }}
-                >
+                <span key={tech} className="tech-tag">
                   {tech}
                 </span>
               ))}
             </div>
+
             {project.github && (
-              <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-                View on GitHub
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+                style={{ alignSelf: 'flex-start', marginTop: '0.5rem' }}
+              >
+                View on GitHub →
               </a>
             )}
           </div>
         ))}
 
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '1.5rem',
-          }}
-        >
+        {/* Other Projects */}
+        <div className="projects-grid">
           {rest.map((project) => (
-            <div
-              key={project.id}
-              style={{
-                backgroundColor: 'var(--card-bg)',
-                borderRadius: '12px',
-                padding: '1.5rem',
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
-              <h3 style={{ marginTop: 0, marginBottom: '0.5rem' }}>{project.title}</h3>
-              <p style={{ marginBottom: '1rem', flexGrow: 1, color: 'var(--text-color)' }}>{project.description}</p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
+            <div key={project.id} className="project-card">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+
+              <div className="tech-tags">
                 {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    style={{
-                      fontSize: '0.75rem',
-                      padding: '0.15rem 0.55rem',
-                      borderRadius: '999px',
-                      backgroundColor: 'var(--secondary-color)',
-                      color: '#fff',
-                      opacity: 0.85,
-                    }}
-                  >
+                  <span key={tech} className="tech-tag">
                     {tech}
                   </span>
                 ))}
               </div>
+
               {project.github && (
-                <a href={project.github} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary-color)', fontWeight: 600 }}>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link"
+                >
                   View on GitHub →
                 </a>
               )}
@@ -152,9 +123,16 @@ export default function Projects() {
           ))}
         </div>
 
-        <p style={{ textAlign: 'center', marginTop: '2.5rem' }}>
-          More on <a href="https://github.com/lemayian23" target="_blank" rel="noopener noreferrer">github.com/lemayian23</a>
-        </p>
+        <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+          <a
+            href="https://github.com/lemayian23"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-secondary"
+          >
+            More on github.com/lemayian23
+          </a>
+        </div>
       </div>
     </section>
   );
