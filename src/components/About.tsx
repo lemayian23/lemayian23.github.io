@@ -17,6 +17,7 @@ export default function About() {
         <h2 className="section-title">About Me</h2>
 
         <div className="about-content">
+          {/* Photo Carousel */}
           <div className="image-carousel">
             {photos.map((src, i) => (
               <img
@@ -24,6 +25,7 @@ export default function About() {
                 src={src}
                 alt={`Denis Lemayian photo ${i + 1}`}
                 className="about-image"
+                loading={i === 0 ? 'eager' : 'lazy'}
                 style={{
                   position: i === 0 ? 'relative' : 'absolute',
                   inset: i === 0 ? undefined : 0,
@@ -57,20 +59,30 @@ export default function About() {
             </div>
           </div>
 
+          {/* Bio */}
           <div className="about-text">
-            <p style={{ fontSize: '1.05rem', lineHeight: 1.75 }}>
+            <div className="about-heading">
+              <h3>Denis Lemayian Kirionki</h3>
+              <span className="about-role">
+                Software Engineer &middot; AI Developer &middot; Full-Stack Developer
+              </span>
+            </div>
+
+            <p>
               I&apos;m a Software Engineer with <strong>4+ years of hands-on experience</strong>{' '}
               building full-stack applications and AI systems. Currently completing a Bachelor
               of Technology in Information Technology at the Technical University of Kenya.
             </p>
-            <p style={{ fontSize: '1.05rem', lineHeight: 1.75 }}>
+
+            <p>
               I architected and delivered <strong>TUK-ConvoSearch</strong> &mdash; a
               production-grade Retrieval-Augmented Generation (RAG) AI assistant that
               processes institutional documents and returns cited, grounded answers using
               open-source LLMs and FAISS vector search, running entirely on CPU without cloud
               dependency.
             </p>
-            <p style={{ fontSize: '1.05rem', lineHeight: 1.75 }}>
+
+            <p>
               I care deeply about clean architecture, thoughtful UX, and shipping software
               that actually works in the real world &mdash; whether it&apos;s an AI assistant
               handling student queries or a CRM replacing a 450-file legacy system.
