@@ -5,58 +5,32 @@ import HeroCarousel from '@/components/HeroCarousel';
 import ScrollReveal from '@/components/ScrollReveal';
 
 const techStack = [
-  {
-    category: 'Languages',
-    items: ['Python', 'JavaScript', 'TypeScript', 'Java', 'Kotlin', 'PHP', 'Go'],
-  },
-  {
-    category: 'AI / ML',
-    items: ['RAG', 'LangChain', 'LlamaIndex', 'FAISS', 'Sentence Transformers', 'Ollama', 'NLP'],
-  },
-  {
-    category: 'Frontend',
-    items: ['React', 'Next.js', 'React Native', 'Tailwind', 'Material UI', 'Bootstrap', 'Chakra UI'],
-  },
-  {
-    category: 'Backend',
-    items: ['FastAPI', 'Flask', 'Node.js', 'Express', 'GraphQL', 'REST APIs', 'WebSockets'],
-  },
-  {
-    category: 'Databases',
-    items: ['MySQL', 'PostgreSQL', 'SQLite', 'TiDB Cloud', 'Firebase', 'MongoDB'],
-  },
-  {
-    category: 'Cloud / DevOps',
-    items: ['Docker', 'Git', 'CI/CD', 'Render', 'Linux'],
-  },
+  { category: 'Languages', items: ['Python', 'JavaScript', 'TypeScript', 'Java', 'Kotlin', 'PHP', 'Go'] },
+  { category: 'AI / ML', items: ['RAG', 'LangChain', 'LlamaIndex', 'FAISS', 'Sentence Transformers', 'Ollama', 'NLP'] },
+  { category: 'Frontend', items: ['React', 'Next.js', 'React Native', 'Tailwind', 'Material UI', 'Bootstrap', 'Chakra UI'] },
+  { category: 'Backend', items: ['FastAPI', 'Flask', 'Node.js', 'Express', 'GraphQL', 'REST APIs', 'WebSockets'] },
+  { category: 'Databases', items: ['MySQL', 'PostgreSQL', 'SQLite', 'TiDB Cloud', 'Firebase', 'MongoDB'] },
+  { category: 'Cloud / DevOps', items: ['Docker', 'Git', 'CI/CD', 'Render', 'Linux'] },
 ];
 
 export default function Home() {
   return (
     <>
-      {/* Hero — Split Layout */}
+      {/* Hero — full-bleed background carousel */}
       <section id="home" className="hero">
+        <HeroCarousel />
         <div className="container">
-          <div className="hero-inner">
-            <div className="hero-text">
-              <span className="hero-eyebrow">Available for work</span>
-              <h1>Hi, I&apos;m Denis Lemayian Kirionki</h1>
-              <p className="hero-sub">
-                Software Engineer &middot; AI Developer &middot; Full-Stack Developer
-              </p>
-              <p className="hero-desc">
-                I build full-stack applications and AI systems &mdash; from production-grade
-                RAG pipelines to enterprise CRM/ERP platforms &mdash; using Python,
-                JavaScript/TypeScript, and frameworks like FastAPI, Flask, React, and Next.js.
-              </p>
-              <div className="btn-group">
-                <a href="#projects" className="btn btn-primary">View My Work</a>
-                <a href="mailto:lemayianledavit2018@gmail.com" className="btn btn-secondary">
-                  Hire Me
-                </a>
-              </div>
-            </div>
-            <HeroCarousel />
+          <span className="hero-eyebrow">Available for work</span>
+          <h1>Hi, I&apos;m Denis Lemayian Kirionki</h1>
+          <p>Software Engineer &middot; AI Developer &middot; Full-Stack Developer</p>
+          <p style={{ fontSize: '1.05rem', maxWidth: '680px', margin: '1rem auto 0' }}>
+            I build full-stack applications and AI systems &mdash; from production-grade RAG
+            pipelines to enterprise CRM/ERP platforms &mdash; using Python, JavaScript/TypeScript,
+            and frameworks like FastAPI, Flask, React, and Next.js.
+          </p>
+          <div className="btn-group">
+            <a href="#projects" className="btn btn-primary">View My Work</a>
+            <a href="mailto:lemayianledavit2018@gmail.com" className="btn btn-secondary">Hire Me</a>
           </div>
         </div>
       </section>
@@ -176,7 +150,7 @@ export default function Home() {
                 Support Assistant (defended before a panel of academic lecturers).
               </p>
               <ul>
-                <li><strong>Relevant coursework:</strong> Artificial Intelligence, Data Structures & Algorithms, Machine Learning, NLP, Database Systems, Software Engineering</li>
+                <li><strong>Relevant coursework:</strong> Artificial Intelligence, Data Structures &amp; Algorithms, Machine Learning, NLP, Database Systems, Software Engineering</li>
                 <li><strong>Python Programming Certificate</strong> — Institute of Advanced Technology, Nairobi</li>
               </ul>
             </div>
