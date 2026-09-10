@@ -1,167 +1,107 @@
-'use client';
+import { ExperienceItem } from '@/types';
 
-import { useState } from 'react';
-import { Skill } from '@/types';
-
-const skills: Skill[] = [
-  { name: 'Python', level: 90, category: 'Languages' },
-  { name: 'JavaScript', level: 88, category: 'Languages' },
-  { name: 'TypeScript', level: 85, category: 'Languages' },
-  { name: 'Java', level: 75, category: 'Languages' },
-  { name: 'Kotlin', level: 72, category: 'Languages' },
-  { name: 'PHP', level: 75, category: 'Languages' },
-  { name: 'Go', level: 55, category: 'Languages' },
-
-  { name: 'RAG / LangChain / LlamaIndex', level: 85, category: 'AI/ML' },
-  { name: 'FAISS / Vector Search', level: 85, category: 'AI/ML' },
-  { name: 'Ollama / Prompt Engineering', level: 82, category: 'AI/ML' },
-  { name: 'NLP / Sentence Transformers', level: 78, category: 'AI/ML' },
-
-  { name: 'React / Next.js', level: 88, category: 'Frontend' },
-  { name: 'Tailwind CSS / Chakra UI', level: 80, category: 'Frontend' },
-  { name: 'React Native', level: 75, category: 'Frontend' },
-
-  { name: 'FastAPI', level: 85, category: 'Backend' },
-  { name: 'Flask', level: 88, category: 'Backend' },
-  { name: 'Node.js / Express', level: 80, category: 'Backend' },
-  { name: 'REST APIs / GraphQL / WebSockets', level: 80, category: 'Backend' },
-
-  { name: 'MySQL / PostgreSQL', level: 82, category: 'Database' },
-  { name: 'MongoDB / Firebase', level: 75, category: 'Database' },
-  { name: 'SQLite / TiDB Cloud', level: 80, category: 'Database' },
-
-  { name: 'Docker / CI-CD', level: 75, category: 'DevOps' },
-  { name: 'Git / GitHub', level: 90, category: 'DevOps' },
-  { name: 'Linux', level: 80, category: 'DevOps' },
-];
-
-const profileImages = [
+const experience: ExperienceItem[] = [
   {
     id: 1,
-    src: "/profile1.jpg",
-    alt: "Denis Lemayian Kirionki - Professional Headshot 1"
+    role: 'ICT Attachment',
+    company: 'NACADA (National Campaign Against Alcohol and Drug Abuse)',
+    location: 'NSSF Building, Nairobi, Kenya',
+    period: 'Jul 2026 – Oct 2026',
+    bullets: [
+      'Provide technical support: printer setup/troubleshooting and resolving hardware/software conflicts.',
+      'Diagnose and resolve reported network outages, coordinating with teams to restore service promptly.',
+      "Review the organization's outsourced ERP systems against operational requirements and flag improvements.",
+      'Document system review findings and contribute to internal IT support documentation.',
+    ],
+    stack: ['ERP Systems', 'Windows', 'Networking', 'Printer Configuration', 'IT Support'],
   },
   {
     id: 2,
-    src: "/profile2.jpg",
-    alt: "Denis Lemayian Kirionki - Professional Headshot 2"
+    role: 'CRM & Systems Developer',
+    company: 'Aquashine Limited',
+    location: 'Nairobi, Kenya',
+    period: 'Jan 2026 – May 2026',
+    bullets: [
+      'Led an end-to-end rewrite of a legacy 450-file PHP CRM/ERP system into a modern Python Flask application, reducing codebase complexity by 90%.',
+      'Architected core modules: job card management, customer database, inventory control, technician scheduling, financial tracking, and margin-based quotation generation.',
+      'Added role-based access control, audit logging, and a responsive Bootstrap UI.',
+      "Integrated PDFShift for document generation and Africa's Talking for automated SMS notifications.",
+      'Maintained the live system on Render (MySQL/TiDB Cloud), sustaining 99.9% uptime, and shipped Excel/CSV export plus dynamic dashboards for management reporting.',
+    ],
+    stack: ['Python', 'Flask', 'MySQL', 'TiDB Cloud', 'JavaScript', 'Bootstrap', 'Render', 'Git'],
   },
   {
     id: 3,
-    src: "/profile3.jpg",
-    alt: "Denis Lemayian Kirionki - Professional Headshot 3"
-  }
+    role: 'Developer Advocate Intern',
+    company: 'Prisma Data Services',
+    location: 'Remote',
+    period: 'Jun 2024 – Dec 2025',
+    bullets: [
+      'Created and maintained Prisma examples and technical articles to aid developer onboarding.',
+      'Built community relationships through content creator engagement and open-source contribution.',
+    ],
+  },
+  {
+    id: 4,
+    role: 'Microsoft Learn Student Ambassador',
+    company: 'Microsoft',
+    location: 'Kenya',
+    period: 'Jan 2023 – Dec 2024',
+    bullets: [
+      'Led a technical writing team and organized hackathons and job-readiness events for computing students.',
+    ],
+  },
 ];
 
-export default function About() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % profileImages.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + profileImages.length) % profileImages.length);
-  };
-
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    const target = e.target as HTMLImageElement;
-    target.src = 'https://ui-avatars.com/api/?name=Denis+Lemayian&size=400&background=3B82F6&color=ffffff';
-  };
-
+export default function Experience() {
   return (
-    <section id="about" className="section about">
+    <section id="experience" className="section" style={{ backgroundColor: 'var(--card-bg)' }}>
       <div className="container">
-        <div className="about-content">
-          <div>
-            <div className="image-carousel">
-              <img
-                src={profileImages[currentImageIndex].src}
-                alt={profileImages[currentImageIndex].alt}
-                className="about-image"
-                onError={handleImageError}
-              />
-
-              <button className="carousel-arrow carousel-prev" onClick={prevImage} aria-label="Previous photo">
-                ‹
-              </button>
-              <button className="carousel-arrow carousel-next" onClick={nextImage} aria-label="Next photo">
-                ›
-              </button>
-
-              <div className="carousel-indicators">
-                {profileImages.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`indicator ${index === currentImageIndex ? 'active' : ''}`}
-                    onClick={() => setCurrentImageIndex(index)}
-                    aria-label={`Show photo ${index + 1}`}
-                  />
-                ))}
+        <h2 style={{ fontSize: '2.5rem', marginBottom: '2.5rem', textAlign: 'center', color: 'var(--secondary-color)' }}>
+          Experience
+        </h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', maxWidth: '850px', margin: '0 auto' }}>
+          {experience.map((item) => (
+            <div
+              key={item.id}
+              style={{
+                borderLeft: '3px solid var(--primary-color)',
+                paddingLeft: '1.5rem',
+              }}
+            >
+              <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '0.5rem', marginBottom: '0.25rem' }}>
+                <h3 style={{ margin: 0 }}>{item.role}</h3>
+                <span style={{ opacity: 0.75, fontSize: '0.95rem' }}>{item.period}</span>
               </div>
-            </div>
-          </div>
-          <div className="about-text">
-            <h2>About Me</h2>
-            <p>
-              Hello! I&apos;m Denis Lemayian Kirionki, a Software Engineer with 4+ years of
-              hands-on experience building full-stack applications and AI systems. I&apos;m
-              currently completing a Bachelor of Technology in Information Technology at the
-              Technical University of Kenya.
-            </p>
-            <p>
-              My flagship project, <strong>TUK-ConvoSearch</strong>, is a production-grade
-              Retrieval-Augmented Generation (RAG) AI assistant that processes institutional
-              documents and returns cited, grounded answers using open-source LLMs and FAISS
-              vector search &mdash; running entirely on CPU with no cloud dependency.
-            </p>
-            <p>
-              Professionally, I led the end-to-end rewrite of a 450-file legacy PHP CRM/ERP
-              system into a modern Python Flask application at Aquashine Limited, cutting
-              codebase complexity by 90% while adding role-based access control, audit
-              logging, and real-time reporting. I&apos;ve also contributed as a Developer
-              Advocate Intern at Prisma Data Services and served as a Microsoft Learn Student
-              Ambassador, leading a technical writing team and organizing hackathons.
-            </p>
-
-            <div style={{ marginTop: '2rem' }}>
-              <h3 style={{ marginBottom: '1rem' }}>Contact Information</h3>
-              <p><strong>Email:</strong> lemayianledavit2018@gmail.com</p>
-              <p><strong>Phone:</strong> +254 799 801 096</p>
-              <p><strong>GitHub:</strong> <a href="https://github.com/lemayian23" target="_blank" rel="noopener noreferrer">github.com/lemayian23</a></p>
-              <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/lemakirionki" target="_blank" rel="noopener noreferrer">linkedin.com/in/lemakirionki</a></p>
-            </div>
-
-            <h3 style={{ marginTop: '2rem', marginBottom: '1rem' }}>Technical Skills</h3>
-            <div className="skills-grid">
-              {skills.map((skill) => (
-                <div key={skill.name} className="skill-item">
-                  <div style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    marginBottom: '0.5rem'
-                  }}>
-                    <span>{skill.name}</span>
-                    <span>{skill.level}%</span>
-                  </div>
-                  <div style={{
-                    width: '100%',
-                    height: '8px',
-                    backgroundColor: '#e2e8f0',
-                    borderRadius: '4px',
-                    overflow: 'hidden'
-                  }}>
-                    <div style={{
-                      width: `${skill.level}%`,
-                      height: '100%',
-                      backgroundColor: 'var(--primary-color)',
-                      transition: 'width 0.3s ease'
-                    }} />
-                  </div>
+              <p style={{ margin: '0 0 0.75rem', fontWeight: 600 }}>
+                {item.company} &middot; {item.location}
+              </p>
+              <ul style={{ margin: '0 0 0.75rem', paddingLeft: '1.25rem' }}>
+                {item.bullets.map((bullet, i) => (
+                  <li key={i} style={{ marginBottom: '0.4rem' }}>{bullet}</li>
+                ))}
+              </ul>
+              {item.stack && (
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  {item.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      style={{
+                        fontSize: '0.8rem',
+                        padding: '0.2rem 0.6rem',
+                        borderRadius: '999px',
+                        backgroundColor: 'var(--primary-color)',
+                        color: '#fff',
+                        opacity: 0.85,
+                      }}
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-              ))}
+              )}
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
