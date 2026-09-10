@@ -15,14 +15,15 @@ export default function HeroCarousel() {
   }, []);
 
   return (
-    <div className="hero-photo">
+    <div className="hero-bg" aria-hidden="true">
       {images.map((src, i) => (
         <div
           key={src}
-          className={`hero-photo-slide ${i === index ? 'active' : ''}`}
+          className={`hero-bg-slide ${i === index ? 'active' : ''}`}
           style={{ backgroundImage: `url(${src})` }}
         />
       ))}
+      <div className="hero-bg-overlay" />
     </div>
   );
 }
