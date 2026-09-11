@@ -6,7 +6,7 @@ const experience: ExperienceItem[] = [
     role: 'ICT Attachment',
     company: 'NACADA (National Campaign Against Alcohol and Drug Abuse)',
     location: 'NSSF Building, Nairobi, Kenya',
-    period: 'Jul 2026 – Oct 2026',
+    period: 'June 2026 – September 2026',
     bullets: [
       'Provide technical support: printer setup/troubleshooting and resolving hardware/software conflicts.',
       'Diagnose and resolve reported network outages, coordinating with teams to restore service promptly.',
