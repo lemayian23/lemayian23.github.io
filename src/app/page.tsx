@@ -158,21 +158,17 @@ export default function Home() {
         </section>
       </ScrollReveal>
 
-      {/* Contact — Email / Phone / Location only. Socials live in the footer. */}
+      {/* Contact — expanded content, no socials (they live in the footer) */}
       <ScrollReveal delay={60}>
         <section id="contact" className="section">
-          <div className="container" style={{ textAlign: 'center' }}>
+          <div className="container">
             <h2 className="section-title">Get In Touch</h2>
-            <p
-              style={{
-                fontSize: '1.05rem',
-                color: 'var(--text-muted)',
-                maxWidth: '600px',
-                margin: '0 auto 2.5rem',
-              }}
-            >
-              Interested in working together? I&apos;m always open to discussing new
-              opportunities and projects.
+
+            <p className="contact-intro">
+              I&apos;m always open to discussing new opportunities, collaborations,
+              and projects &mdash; whether it&apos;s a full-time role, a contract
+              engagement, or a technical conversation about AI and full-stack
+              engineering.
             </p>
 
             <div className="contact-grid">
@@ -190,9 +186,38 @@ export default function Home() {
               </div>
             </div>
 
-            <a href="mailto:lemayianledavit2018@gmail.com" className="btn btn-primary">
-              Send Message
-            </a>
+            <div className="contact-details">
+              <div className="contact-detail-block">
+                <h3>What I&apos;m Looking For</h3>
+                <ul>
+                  <li>Junior software engineering or AI development roles</li>
+                  <li>Backend or full-stack positions using Python, FastAPI, or React</li>
+                  <li>Contract or freelance work on AI systems and RAG pipelines</li>
+                  <li>Collaboration on open-source projects in AI, EdTech, or developer tooling</li>
+                </ul>
+              </div>
+
+              <div className="contact-detail-block">
+                <h3>What You Can Expect</h3>
+                <ul>
+                  <li>A reply within 24&ndash;48 hours on weekdays</li>
+                  <li>A direct, honest conversation about fit and expectations</li>
+                  <li>Clear timelines on any work I take on</li>
+                  <li>Comfortable working across time zones for remote roles</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="contact-cta">
+              <p>
+                The fastest way to reach me is by email. If you&apos;d rather
+                start with a quick conversation, send over a short note about
+                what you&apos;re working on &mdash; I read every message.
+              </p>
+              <a href="mailto:lemayianledavit2018@gmail.com" className="btn btn-primary">
+                Send Me an Email
+              </a>
+            </div>
           </div>
         </section>
       </ScrollReveal>
