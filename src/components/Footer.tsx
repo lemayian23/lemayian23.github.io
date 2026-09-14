@@ -52,7 +52,8 @@ export default function Footer() {
 
         <p>© {year} Denis Lemayian Kirionki. All rights reserved.</p>
         <p>
-          Built with Next.js, TypeScript &amp; CSS
+          Always building. Always learning.
+          github.com/lemayian23
         </p>
       </div>
     </footer>
