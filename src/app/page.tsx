@@ -22,11 +22,12 @@ export default function Home() {
         <div className="container">
           <span className="hero-eyebrow">Available for work</span>
           <h1>Hi, I&apos;m Denis Lemayian Kirionki</h1>
-          <p>Software Engineer &middot; AI Developer &middot; Full-Stack Developer</p>
+          <p>AI Engineer &middot; RAG Systems &middot; Python, JavaScript & TypeScript</p>
           <p style={{ fontSize: '1.05rem', maxWidth: '680px', margin: '1rem auto 0' }}>
-            I build full-stack applications and AI systems &mdash; from production-grade RAG
-            pipelines to enterprise CRM/ERP platforms &mdash; using Python, JavaScript/TypeScript,
-            and frameworks like FastAPI, Flask, React, and Next.js.
+            I build AI systems end-to-end — retrieval pipelines, agents, and full-stack
+applications. My current project is a fully local 10-capability RAG platform
+with hybrid search, knowledge graphs, corrective retrieval, and multi-tool
+agents. Nine ADRs, a golden Q/A test suite, 17/18 passing.
           </p>
           <div className="btn-group">
             <a href="#projects" className="btn btn-primary">View My Work</a>
