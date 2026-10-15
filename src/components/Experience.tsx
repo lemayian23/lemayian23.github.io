@@ -15,42 +15,6 @@ const experience: ExperienceItem[] = [
     ],
     stack: ['ERP Systems', 'Windows', 'Networking', 'Printer Configuration', 'IT Support'],
   },
-  {
-    id: 2,
-    role: 'CRM & Systems Developer',
-    company: 'Aquashine Limited',
-    location: 'Nairobi, Kenya',
-    period: 'Jan 2026 – May 2026',
-    bullets: [
-      'Led an end-to-end rewrite of a legacy 450-file PHP CRM/ERP system into a modern Python Flask application, reducing codebase complexity by 90%.',
-      'Architected core modules: job card management, customer database, inventory control, technician scheduling, financial tracking, and margin-based quotation generation.',
-      'Added role-based access control, audit logging, and a responsive Bootstrap UI.',
-      "Integrated PDFShift for document generation and Africa's Talking for automated SMS notifications.",
-      'Maintained the live system on Render (MySQL/TiDB Cloud), sustaining 99.9% uptime, and shipped Excel/CSV export plus dynamic dashboards for management reporting.',
-    ],
-    stack: ['Python', 'Flask', 'MySQL', 'TiDB Cloud', 'JavaScript', 'Bootstrap', 'Render', 'Git'],
-  },
-  {
-    id: 3,
-    role: 'Developer Advocate Intern',
-    company: 'Prisma Data Services',
-    location: 'Remote',
-    period: 'Jun 2024 – Dec 2025',
-    bullets: [
-      'Created and maintained Prisma examples and technical articles to aid developer onboarding.',
-      'Built community relationships through content creator engagement and open-source contribution.',
-    ],
-  },
-  {
-    id: 4,
-    role: 'Microsoft Learn Student Ambassador',
-    company: 'Microsoft',
-    location: 'Kenya',
-    period: 'Jan 2023 – Dec 2024',
-    bullets: [
-      'Led a technical writing team and organized hackathons and job-readiness events for computing students.',
-    ],
-  },
 ];
 
 export default function Experience() {
