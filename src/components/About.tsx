@@ -70,8 +70,8 @@ export default function About() {
 
             <p>
               I&apos;m a Software Engineer with <strong>4+ years of hands-on experience</strong>{' '}
-              building full-stack applications and AI systems. Currently completing a Bachelor
-              of Technology in Information Technology at the Technical University of Kenya.
+              building full-stack applications and AI systems. Completed a Bachelor
+              of Technology in Information Technology at the Technical University of Kenya and is awaiting graduation.
             </p>
 
             <p>
