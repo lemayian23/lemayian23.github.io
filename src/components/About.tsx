@@ -14,79 +14,76 @@ export default function About() {
   return (
     <section id="about" className="section">
       <div className="container">
-        <h2 className="section-title">About Me</h2>
+        <div className="section-head">
+          <span className="eyebrow">about</span>
+          <h2 className="section-title">Behind the terminal</h2>
+        </div>
 
-        <div className="about-content">
-          {/* Photo Carousel */}
-          <div className="image-carousel">
+        <div className="about-grid">
+          <div className="about-photo">
+            <span className="frame-tag">denis@nairobi:~$</span>
             {photos.map((src, i) => (
               <img
                 key={src}
                 src={src}
-                alt={`Denis Lemayian photo ${i + 1}`}
-                className="about-image"
+                alt={`Denis Lemayian, photo ${i + 1}`}
+                className={i === idx ? 'active' : ''}
                 loading={i === 0 ? 'eager' : 'lazy'}
-                style={{
-                  position: i === 0 ? 'relative' : 'absolute',
-                  inset: i === 0 ? undefined : 0,
-                  opacity: i === idx ? 1 : 0,
-                }}
               />
             ))}
-            <button
-              aria-label="Previous photo"
-              className="carousel-arrow carousel-prev"
-              onClick={prev}
-            >
+            <button aria-label="Previous photo" className="carousel-arrow carousel-prev" onClick={prev}>
               ‹
             </button>
-            <button
-              aria-label="Next photo"
-              className="carousel-arrow carousel-next"
-              onClick={next}
-            >
+            <button aria-label="Next photo" className="carousel-arrow carousel-next" onClick={next}>
               ›
             </button>
-            <div className="carousel-indicators">
+            <div className="carousel-dots">
               {photos.map((_, i) => (
                 <button
                   key={i}
                   aria-label={`Go to photo ${i + 1}`}
-                  className={`indicator ${i === idx ? 'active' : ''}`}
+                  className={i === idx ? 'active' : ''}
                   onClick={() => setIdx(i)}
                 />
               ))}
             </div>
           </div>
 
-          {/* Bio */}
           <div className="about-text">
-            <div className="about-heading">
-              <h3>Denis Lemayian Kirionki</h3>
-              <span className="about-role">
-                Software Engineer &middot; AI Developer &middot; Full-Stack Developer
-              </span>
+            <p>
+              I&apos;m a Software Engineer working across freelance business automation, AI systems
+              and IT support — from rewriting a <strong>450-file CRM/ERP</strong> at Aquashine in a
+              one-month sprint to an ICT attachment at NACADA. Currently completing a Bachelor of
+              Technology in IT at the Technical University of Kenya.
+            </p>
+            <p>
+              I architected and delivered <strong>TUK-ConvoSearch</strong> — a production-grade
+              Retrieval-Augmented Generation (RAG) assistant that processes institutional documents
+              and returns cited, grounded answers using open-source LLMs and FAISS vector search,
+              running entirely on CPU without cloud dependency.
+            </p>
+            <p>
+              I&apos;ve also automated systems for real businesses — a furniture platform, a retail
+              shop&apos;s record keeping — and I mentor Maasai youth aged 13–17 in coding. I care
+              deeply about clean architecture, thoughtful UX, and shipping software that actually
+              works in the real world. When I&apos;m not shipping products, I&apos;m building a
+              hobby OS in C.
+            </p>
+
+            <div className="about-meta">
+              <div className="m">
+                <span className="num">7</span>
+                <span className="lbl">Languages shipped</span>
+              </div>
+              <div className="m">
+                <span className="num">60+</span>
+                <span className="lbl">Public repos</span>
+              </div>
+              <div className="m">
+                <span className="num">450→1</span>
+                <span className="lbl">Legacy rewrite</span>
+              </div>
             </div>
-
-            <p>
-              I&apos;m a Software Engineer with <strong>4+ years of hands-on experience</strong>{' '}
-              building full-stack applications and AI systems. Completed a Bachelor
-              of Technology in Information Technology at the Technical University of Kenya and is awaiting graduation.
-            </p>
-
-            <p>
-              I architected and delivered <strong>TUK-ConvoSearch</strong> &mdash; a
-              production-grade Retrieval-Augmented Generation (RAG) AI assistant that
-              processes institutional documents and returns cited, grounded answers using
-              open-source LLMs and FAISS vector search, running entirely on CPU without cloud
-              dependency.
-            </p>
-
-            <p>
-              I care deeply about clean architecture, thoughtful UX, and shipping software
-              that actually works in the real world &mdash; whether it&apos;s an AI assistant
-              handling student queries or a CRM replacing a 450-file legacy system.
-            </p>
           </div>
         </div>
       </div>
